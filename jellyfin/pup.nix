@@ -5,16 +5,15 @@
 # (on the Dogebox data disk). Web UI: http://<dogebox>:8096
 let
   jellyfin = pkgs.jellyfin;
-  ffmpeg = pkgs.ffmpeg;
 
   run = pkgs.writeScriptBin "run.sh" ''
     #!${pkgs.stdenv.shell}
     mkdir -p /storage/config /storage/cache /storage/log /storage/media
+    # NB: nixpkgs' jellyfin wrapper already injects --ffmpeg; do not pass it again.
     exec ${jellyfin}/bin/jellyfin \
       --datadir /storage/config \
       --cachedir /storage/cache \
-      --logdir /storage/log \
-      --ffmpeg ${ffmpeg}/bin/ffmpeg
+      --logdir /storage/log
   '';
 in
 {
