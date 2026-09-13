@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "meta": {
+    "name": "Jellyfin",
+    "version": "0.0.1",
+    "logoPath": "logo.png",
+    "shortDescription": "The Free Software Media System on your Dogebox",
+    "longDescription": "Jellyfin lets you run your own media server for movies, shows, music and photos — no accounts, no tracking, no subscriptions. Web UI on port 8096. Media library lives in the pup's storage volume; copy files in via scp or the network share of your choice.",
+    "upstreamVersions": {
+      "Jellyfin": "10.x"
+    }
+  },
+  "config": {
+    "sections": null
+  },
+  "container": {
+    "build": {
+      "nixFile": "pup.nix",
+      "nixFileSha256": "f50d8ed22523c1658d730d88ed149da070e298a47680b5c0720cc92a17e7b328"
+    },
+    "services": [
+      {
+        "name": "jellyfin",
+        "command": {
+          "exec": "/bin/run.sh",
+          "cwd": "",
+          "env": null
+        }
+      }
+    ],
+    "exposes": [
+      {
+        "name": "web",
+        "type": "http",
+        "port": 8096,
+        "interfaces": null,
+        "listenOnHost": true,
+        "webUI": true
+      }
+    ],
+    "requiresInternet": true
+  },
+  "interfaces": null,
+  "dependencies": null,
+  "metrics": null
+}

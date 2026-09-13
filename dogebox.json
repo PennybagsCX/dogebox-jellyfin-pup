@@ -1,0 +1,10 @@
+{
+  "id": "dts.pups.jellyfin",
+  "name": "dts — jellyfin",
+  "description": "Jellyfin media server pup for Dogebox",
+  "pups": [
+    {
+      "location": "jellyfin"
+    }
+  ]
+}
