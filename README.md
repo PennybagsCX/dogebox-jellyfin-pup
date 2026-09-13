@@ -1,5 +1,7 @@
 # 🎬 Jellyfin for Dogebox
 
+<p align="center"><img src="jellyfin/logo.png" width="110" alt="Jellyfin logo"></p>
+
 **The Free Software Media System, packaged as a [Dogebox](https://dogebox.org) pup.**
 
 Your movies, shows, music and photos — on your own Dogecoin node box. No accounts, no cloud, no subscriptions, no tracking.
