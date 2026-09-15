@@ -39,7 +39,17 @@ Copy media in over SSH (path from the pup management screen):
 scp -r ~/Movies/*.mkv shibe@dogebox:/opt/dogebox/pups/storage/<pup-id>/media/movies/
 ```
 
-Then add the folder as a library in the Jellyfin dashboard.
+### Register the libraries (one-time after install)
+
+The pup does **not** create Jellyfin libraries automatically — a fresh install scans `/storage/media` and finds nothing. After you have media in place, register each folder as a library in the Jellyfin dashboard:
+
+- Dashboard → **Libraries** → **Add Media Library**
+- For each subdir under `/storage/media`:
+  - **Content type**: Movies / Shows / Music / etc.
+  - **Folders**: `/storage/media/<subdir>` (e.g. `movies`, `shows`, `music`)
+  - **OK** → Jellyfin starts the initial scan
+
+This is a one-time setup; libraries persist in `library.db` across reinstalls.
 
 ## Hardware notes (NanoPC-T6 / RK3588)
 
